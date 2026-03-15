@@ -1,4 +1,7 @@
+//modo de importacao total
 const p = require("./services/products");
+//Modo de importacao desestruturada
+const { getByProducts, getLabelName } = require("./services/products");
 const config = require("./services/config");
 const database = require("./services/database");
 
@@ -14,6 +17,9 @@ async function main() {
 
   database.connectTodatabaseFnc("myDatabase");
   database.disconnectFromDatabase("myDatabase");
+
+  getByProducts(3, "Tablet");
+  getLabelName("Smartphone");
 }
 
 main();
